@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-opn/opn/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-opn/node_modules/opn/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-opn">npmtest-opn (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-opn/opn/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-opn/node_modules/opn/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">9.43% <small>(5 / 53)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-opn/opn/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-opn/node_modules/opn/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -410,102 +412,101 @@ var childProcess = require('child_process');
 var objectAssign = require('object-assign');
 var Promise = require('pinkie-promise');
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered">function (target, opts) {</span>
-<span class="cstat-no" title="statement not covered">	if (typeof target !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">		return Promise.reject(new Error('Expected a `target`'));</span>
+module.exports = <span class="fstat-no" title="function not covered" >function (target, opts) {</span>
+<span class="cstat-no" title="statement not covered" >	if (typeof target !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >		return Promise.reject(new Error('Expected a `target`'));</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	opts = objectAssign({wait: true}, opts);</span>
+<span class="cstat-no" title="statement not covered" >	opts = objectAssign({wait: true}, opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var cmd;</span>
-<span class="cstat-no" title="statement not covered">	var appArgs = [];</span>
-<span class="cstat-no" title="statement not covered">	var args = [];</span>
-<span class="cstat-no" title="statement not covered">	var cpOpts = {};</span>
+<span class="cstat-no" title="statement not covered" >	var cmd;</span>
+<span class="cstat-no" title="statement not covered" >	var appArgs = [];</span>
+<span class="cstat-no" title="statement not covered" >	var args = [];</span>
+<span class="cstat-no" title="statement not covered" >	var cpOpts = {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (Array.isArray(opts.app)) {</span>
-<span class="cstat-no" title="statement not covered">		appArgs = opts.app.slice(1);</span>
-<span class="cstat-no" title="statement not covered">		opts.app = opts.app[0];</span>
+<span class="cstat-no" title="statement not covered" >	if (Array.isArray(opts.app)) {</span>
+<span class="cstat-no" title="statement not covered" >		appArgs = opts.app.slice(1);</span>
+<span class="cstat-no" title="statement not covered" >		opts.app = opts.app[0];</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (process.platform === 'darwin') {</span>
-<span class="cstat-no" title="statement not covered">		cmd = 'open';</span>
+<span class="cstat-no" title="statement not covered" >	if (process.platform === 'darwin') {</span>
+<span class="cstat-no" title="statement not covered" >		cmd = 'open';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (opts.wait) {</span>
-<span class="cstat-no" title="statement not covered">			args.push('-W');</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.wait) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push('-W');</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (opts.app) {</span>
-<span class="cstat-no" title="statement not covered">			args.push('-a', opts.app);</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.app) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push('-a', opts.app);</span>
 		}
-	} else <span class="cstat-no" title="statement not covered">if (process.platform === 'win32') {</span>
-<span class="cstat-no" title="statement not covered">		cmd = 'cmd';</span>
-<span class="cstat-no" title="statement not covered">		args.push('/c', 'start', '""');</span>
-<span class="cstat-no" title="statement not covered">		target = target.replace(/&amp;/g, '^&amp;');</span>
+	} else <span class="cstat-no" title="statement not covered" >if (process.platform === 'win32') {</span>
+<span class="cstat-no" title="statement not covered" >		cmd = 'cmd';</span>
+<span class="cstat-no" title="statement not covered" >		args.push('/c', 'start', '""');</span>
+<span class="cstat-no" title="statement not covered" >		target = target.replace(/&amp;/g, '^&amp;');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (opts.wait) {</span>
-<span class="cstat-no" title="statement not covered">			args.push('/wait');</span>
-		}
-&nbsp;
-<span class="cstat-no" title="statement not covered">		if (opts.app) {</span>
-<span class="cstat-no" title="statement not covered">			args.push(opts.app);</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.wait) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push('/wait');</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (appArgs.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">			args = args.concat(appArgs);</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.app) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push(opts.app);</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (appArgs.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			args = args.concat(appArgs);</span>
 		}
 	} else {
-<span class="cstat-no" title="statement not covered">		if (opts.app) {</span>
-<span class="cstat-no" title="statement not covered">			cmd = opts.app;</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.app) {</span>
+<span class="cstat-no" title="statement not covered" >			cmd = opts.app;</span>
 		} else {
-<span class="cstat-no" title="statement not covered">			cmd = path.join(__dirname, 'xdg-open');</span>
+<span class="cstat-no" title="statement not covered" >			cmd = path.join(__dirname, 'xdg-open');</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (appArgs.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">			args = args.concat(appArgs);</span>
+<span class="cstat-no" title="statement not covered" >		if (appArgs.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			args = args.concat(appArgs);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (!opts.wait) {</span>
+<span class="cstat-no" title="statement not covered" >		if (!opts.wait) {</span>
 			// xdg-open will block the process unless
 			// stdio is ignored even if it's unref'd
-<span class="cstat-no" title="statement not covered">			cpOpts.stdio = 'ignore';</span>
+<span class="cstat-no" title="statement not covered" >			cpOpts.stdio = 'ignore';</span>
 		}
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	args.push(target);</span>
+<span class="cstat-no" title="statement not covered" >	args.push(target);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (process.platform === 'darwin' &amp;&amp; appArgs.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">		args.push('--args');</span>
-<span class="cstat-no" title="statement not covered">		args = args.concat(appArgs);</span>
+<span class="cstat-no" title="statement not covered" >	if (process.platform === 'darwin' &amp;&amp; appArgs.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >		args.push('--args');</span>
+<span class="cstat-no" title="statement not covered" >		args = args.concat(appArgs);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var cp = childProcess.spawn(cmd, args, cpOpts);</span>
+<span class="cstat-no" title="statement not covered" >	var cp = childProcess.spawn(cmd, args, cpOpts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (opts.wait) {</span>
-<span class="cstat-no" title="statement not covered">		return new Promise(<span class="fstat-no" title="function not covered">function (resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">			cp.once('error', reject);</span>
+<span class="cstat-no" title="statement not covered" >	if (opts.wait) {</span>
+<span class="cstat-no" title="statement not covered" >		return new Promise(<span class="fstat-no" title="function not covered" >function (resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >			cp.once('error', reject);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			cp.once('close', <span class="fstat-no" title="function not covered">function (code) {</span></span>
-<span class="cstat-no" title="statement not covered">				if (code &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">					reject(new Error('Exited with code ' + code));</span>
-<span class="cstat-no" title="statement not covered">					return;</span>
+<span class="cstat-no" title="statement not covered" >			cp.once('close', <span class="fstat-no" title="function not covered" >function (code) {</span></span>
+<span class="cstat-no" title="statement not covered" >				if (code &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >					reject(new Error('Exited with code ' + code));</span>
+<span class="cstat-no" title="statement not covered" >					return;</span>
 				}
 &nbsp;
-<span class="cstat-no" title="statement not covered">				resolve(cp);</span>
+<span class="cstat-no" title="statement not covered" >				resolve(cp);</span>
 			});
 		});
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	cp.unref();</span>
+<span class="cstat-no" title="statement not covered" >	cp.unref();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	return Promise.resolve(cp);</span>
+<span class="cstat-no" title="statement not covered" >	return Promise.resolve(cp);</span>
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 09:39:10 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 11:50:03 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
