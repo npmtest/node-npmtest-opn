@@ -1,4 +1,7 @@
-# test coverage for  [opn (v4.0.2)](https://github.com/sindresorhus/opn#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-opn.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-opn) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-opn.svg)](https://travis-ci.org/npmtest/node-npmtest-opn)
+# npmtest-opn
+
+#### basic test coverage for  [opn (v4.0.2)](https://github.com/sindresorhus/opn#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-opn.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-opn) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-opn.svg)](https://travis-ci.org/npmtest/node-npmtest-opn)
+
 #### A better node-open. Opens stuff like websites, files, executables. Cross-platform.
 
 [![NPM](https://nodei.co/npm/opn.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/opn)
